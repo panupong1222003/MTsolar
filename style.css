@@ -1,0 +1,1677 @@
+/* ==========================
+   GLOBAL
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Noto Sans Thai',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fff;
+    color:#1e293b;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+.container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+}
+
+
+/* ==========================
+   HEADER
+========================== */
+
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(20px);
+    box-shadow:0 2px 20px rgba(0,0,0,.05);
+}
+
+.navbar{
+    height:90px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo img{
+    height:58px;
+    object-fit:contain;
+}
+
+
+/* ==========================
+   MENU
+========================== */
+
+.menu{
+    display:flex;
+    gap:28px;
+}
+
+.menu li{
+    position:relative;
+}
+
+.menu li a{
+    color:#0f172a;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.menu li a:hover{
+    color:#1d4ed8;
+}
+
+.menu li a.active{
+    color:#1d4ed8;
+}
+
+
+/* ==========================
+   DROPDOWN
+========================== */
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown>a{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.dropdown-menu{
+    position:absolute;
+    top:40px;
+    left:0;
+    min-width:240px;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 50px rgba(0,0,0,.12);
+
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(15px);
+
+    transition:.35s;
+}
+
+.dropdown:hover .dropdown-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.dropdown-menu li{
+    width:100%;
+}
+
+.dropdown-menu li a{
+    display:block;
+    padding:8px 24px;   /* เดิม 16px */
+
+    font-size:14px;
+
+    color:#334155;
+
+    transition:.3s;
+
+    line-height:1.4;
+}
+
+.dropdown-menu li a:hover{
+    background:#f8fafc;
+    color:#1d4ed8;
+}
+
+/* ลดระยะห่างเฉพาะเมนูติดต่อเรา */
+
+.contact-menu li{
+
+    margin:0;
+
+    padding:0;
+
+}
+
+/* ==========================
+   HEADER RIGHT
+========================== */
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.quote-btn{
+    background:linear-gradient(
+        135deg,
+        #1d4ed8,
+        #2563eb
+    );
+
+    color:white;
+    padding:14px 24px;
+
+    border-radius:50px;
+
+    font-size:14px;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.quote-btn:hover{
+    transform:translateY(-2px);
+}
+
+
+.branch-box{
+    position:relative;
+}
+
+.branch-btn{
+    border:none;
+    background:#f1f5f9;
+
+    padding:13px 18px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.branch-menu{
+    right:0;
+    left:auto;
+}
+
+
+/* ==========================
+   SOCIAL ICONS
+========================== */
+
+.social-icon{
+    width:36px;
+    height:36px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+
+    font-size:14px;
+
+    transition:.3s;
+}
+
+.facebook{
+    background:#1877F2;
+}
+
+.line{
+    background:#00B900;
+}
+
+.phone{
+    background:#0f172a;
+}
+
+.map{
+    background:#ef4444;
+}
+
+.social-icon:hover{
+    transform:translateY(-3px);
+}
+
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+    position:relative;
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+}
+
+.hero-bg{
+
+    position:absolute;
+    inset:0;
+
+    background-image:url(
+'https://greenpowersolar.co.th/wp-content/uploads/2023/11/energy-research-institute-1440x900-1-1024x640-1.jpg'
+);
+
+    background-size:cover;
+    background-position:center;
+
+    opacity:0.2;
+
+    transform:scale(1);
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgb(5, 9, 105),
+        rgba(27, 63, 139, 0.829),
+        rgba(58, 96, 179, 0.406)
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+    z-index:5;
+
+    width:100%;
+}
+
+.hero-text{
+
+    max-width:700px;
+
+    color:white;
+
+    margin-left:90px;
+
+}
+
+.badge{
+
+    display:inline-block;
+
+    padding:10px 28px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    border-radius:50px;
+
+    background:rgb(239, 110, 4);
+
+    backdrop-filter:blur(10px);
+
+    margin-top:40px;
+
+    margin-bottom:15px;
+
+}
+
+.hero-text h1{
+
+    font-size:62px;
+
+    line-height:1.15;
+
+    font-weight:800;
+
+    margin-bottom:30px;
+
+    max-width:1100px;
+
+    white-space:nowrap;
+    
+    margin-bottom:30px;
+
+}
+
+.hero-text p{
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    margin-bottom:45px;
+
+    color:rgb(255, 255, 255);
+
+}
+
+
+/* ==========================
+   HERO BUTTONS
+========================== */
+
+.hero-buttons{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:-40px;
+
+}
+
+.primary-btn{
+
+    background:rgb(254, 255, 255);
+
+    color:#0014f1;
+
+    padding:18px 32px;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+.video-btn{
+
+    color:rgb(255, 255, 255);
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    font-weight:700;
+}
+
+.video-btn i{
+
+    width:55px;
+    height:55px;
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    backdrop-filter:blur(20px);
+
+}
+
+
+/* ==========================
+   STATS
+========================== */
+
+.stats{
+
+    margin-top:-80px;
+
+    position:relative;
+
+    z-index:50;
+}
+
+.stats-box{
+
+    background:rgb(250, 251, 250);
+
+    border-radius:35px;
+
+    padding:50px;
+
+    box-shadow:
+    0 20px 70px rgba(0,0,0,.08);
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:30px;
+}
+
+.stat-item{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:20px;
+
+    text-align:left;
+
+    position:relative;
+}
+
+
+/* เส้นคั่น */
+
+.stat-item:not(:last-child)::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-15px;
+
+    width:2px;
+
+    height:70px;
+
+    background:#000105;
+
+    opacity:.7;
+
+}
+
+
+/* วงกลมฟ้าอ่อน */
+
+.stat-icon{
+
+    width:62px;
+    height:62px;
+
+    background:#dbeafe;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex-shrink:0;
+}
+
+
+/* ไอคอน */
+
+.stat-icon i{
+
+    font-size:30px;
+
+    color:#1d4ed8;
+}
+
+
+/* หัวข้อ */
+
+.stat-text h3{
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color:#1d4ed8;
+
+    margin-bottom:8px;
+}
+
+
+/* คำอธิบาย */
+
+.stat-text p{
+
+    font-size:15px;
+
+    color:#1e293b;
+
+    line-height:1.5;
+}
+
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:1200px){
+
+    .menu{
+
+        display:flex !important;
+
+        gap:40px;
+
+    }
+
+    .hero-text h1{
+
+        font-size:52px;
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .header-right{
+
+        display:none;
+    }
+
+    .hero-text h1{
+
+        font-size:42px;
+    }
+
+    .hero-text p{
+
+        font-size:17px;
+    }
+
+    .stats-box{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hero{
+
+        min-height:90vh;
+    }
+
+    .hero-text h1{
+
+        font-size:34px;
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+    }
+
+    .stats-box{
+
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* ===================================
+   SERVICES
+=================================== */
+
+.services{
+    padding:120px 0;
+    background:#f8fbff;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    gap:80px;
+    align-items:center;
+}
+
+.services-left span{
+    color:#2563eb;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.services-left h2{
+    font-size:38px;
+    line-height:1.2;
+    margin:20px 0;
+    color:#0f172a;
+}
+
+.services-left p{
+    color:#64748b;
+    line-height:1.9;
+    margin-bottom:35px;
+}
+
+.services-left a{
+    display:inline-block;
+    padding:16px 28px;
+    border-radius:50px;
+    background:#1d4ed8;
+    color:#ffffff;
+    font-weight:700;
+    transition:.3s;
+}
+
+.services-left a:hover{
+    transform:translateY(-3px);
+}
+
+.services-right{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+/* =======================
+   SERVICE ICONS
+======================= */
+
+.service-icon{
+
+    width:80px;
+    height:80px;
+
+    background:#EDF4FF;
+
+    border-radius:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:25px;
+
+    transition:0.3s;
+
+}
+
+
+.service-icon i{
+
+    font-size:42px;
+
+    color:#2563EB;
+
+}
+
+
+.service-card:hover .service-icon{
+
+    background:#2563EB;
+
+    transform:translateY(-5px);
+
+}
+
+
+.service-card:hover .service-icon i{
+
+    color:white;
+
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+}
+
+.service-card i{
+    font-size:42px;
+    color:#2563eb;
+    margin-bottom:20px;
+}
+
+.service-card h3{
+    font-size:22px;
+    margin-bottom:15px;
+    color:#0f172a;
+}
+
+.service-card p{
+    color:#64748b;
+    line-height:1.8;
+}
+
+
+/* ===================================
+   PROJECTS
+=================================== */
+
+.projects{
+    padding:120px 0;
+    background:#fff;
+}
+
+.projects h2{
+    text-align:center;
+    font-size:48px;
+    color:#0f172a;
+    margin-bottom:20px;
+}
+
+.projects > .container > p{
+    text-align:center;
+    max-width:700px;
+    margin:auto;
+    color:#64748b;
+    line-height:1.8;
+    margin-bottom:60px;
+}
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.project-card{
+    overflow:hidden;
+    border-radius:30px;
+    background:#fff;
+    box-shadow:0 10px 35px rgba(0,0,0,.06);
+    transition:.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+}
+
+.project-card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.project-info{
+    padding:25px;
+}
+
+.project-info h3{
+    color:#0f172a;
+    margin-bottom:8px;
+}
+
+.project-info span{
+    color:#64748b;
+}
+
+
+/* ===================================
+   FOOTER
+=================================== */
+
+footer{
+    background:#071225;
+    color:#ffffff;
+    padding-top:90px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr 1.5fr;
+    gap:50px;
+    padding-bottom:70px;
+}
+
+.footer-logo{
+    width:180px;
+    margin-bottom:25px;
+}
+
+.footer-grid p{
+    color:#fefefe;
+    line-height:1.9;
+}
+
+.footer-grid h4{
+    margin-bottom:25px;
+    font-size:18px;
+}
+
+.footer-grid ul li{
+    margin-bottom:15px;
+    color:#ffffff;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.footer-grid ul li:hover{
+    color:#60a5fa;
+}
+
+.copyright{
+    border-top:1px solid rgba(255,255,255,.08);
+    text-align:center;
+    padding:25px 0;
+    color:#94a3b8;
+    font-size:14px;
+}
+
+
+/* ===================================
+   QUOTE PAGE
+=================================== */
+
+.quote-page{
+    background:#f5f9ff;
+    min-height:100vh;
+}
+
+.quote-header{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+
+    padding:30px 0;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.quote-header img{
+    height:70px;
+}
+
+.back-home{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:#1d4ed8;
+    font-weight:700;
+}
+
+.quote-section{
+    padding:40px 0 100px;
+}
+
+.quote-container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1.1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.quote-left span{
+    color:#2563eb;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.quote-left h1{
+    font-size:52px;
+    margin:20px 0;
+    color:#0f172a;
+    line-height:1.2;
+}
+
+.quote-left p{
+    color:#64748b;
+    line-height:1.9;
+    margin-bottom:40px;
+}
+
+.contact-info{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.contact-info div{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    color:#334155;
+    font-weight:600;
+}
+
+.contact-info i{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:#e0ecff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#2563eb;
+}
+
+.contact-info a{
+    color:#2563eb;
+}
+
+.quote-form-box{
+    background:#fff;
+    padding:50px;
+    border-radius:35px;
+    box-shadow:0 20px 70px rgba(0,0,0,.08);
+}
+
+.quote-form-box form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    margin-bottom:10px;
+    font-weight:700;
+    color:#334155;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+
+    border:1px solid #dbeafe;
+
+    border-radius:16px;
+
+    padding:16px 20px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+
+    border-color:#2563eb;
+}
+
+.full-width{
+    grid-column:1 / -1;
+}
+
+.submit-btn{
+
+    grid-column:1 / -1;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color:#fff;
+
+    border:none;
+
+    padding:18px;
+
+    border-radius:50px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.submit-btn:hover{
+    transform:translateY(-3px);
+}
+
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+
+@media(max-width:1200px){
+
+    .project-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:992px){
+
+    .services-grid,
+    .quote-container{
+        grid-template-columns:1fr;
+    }
+
+    .services-left{
+        text-align:center;
+    }
+
+    .quote-left{
+        text-align:center;
+    }
+
+    .contact-info{
+        align-items:center;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .services-right{
+        grid-template-columns:1fr;
+    }
+
+    .project-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .quote-form-box form{
+        grid-template-columns:1fr;
+    }
+
+    .full-width,
+    .submit-btn{
+        grid-column:auto;
+    }
+
+    .quote-left h1,
+    .services-left h2,
+    .projects h2{
+        font-size:36px;
+    }
+
+}
+
+/* =========================
+   BRANCH PAGE
+========================= */
+
+.branch-page{
+
+    background:#f5f9ff;
+
+    min-height:100vh;
+
+    padding:80px 20px;
+
+}
+
+.branch-container{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.back-btn{
+
+    display:inline-block;
+
+    margin-bottom:30px;
+
+    color:#2563eb;
+
+    font-weight:700;
+
+}
+
+.branch-container h1{
+
+    color:#0f172a;
+
+    margin-bottom:30px;
+
+}
+
+.branch-card{
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.branch-card p{
+
+    margin-bottom:25px;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+.branch-card i{
+
+    width:35px;
+
+    color:#2563eb;
+
+}
+
+.branch-card a{
+
+    color:#2563eb;
+
+    font-weight:600;
+
+}
+/* ==========================
+   THAI TITLE
+========================== */
+
+.thai-title{
+
+    font-size:38px !important;
+
+    line-height:1.2;
+
+}
+
+/* ======================
+   ENGLISH TITLE
+====================== */
+
+.eng-title{
+
+    font-size:72px;
+
+    font-weight:800;
+
+    line-height:1.1;
+
+    margin-bottom:40px;
+
+    white-space:nowrap;
+
+}
+
+/*=========================
+ABOUT PAGE
+=========================*/
+
+
+
+.pdf-container{
+
+    width:100%;
+
+    height:100vh;
+
+    background:#f8fafc;
+
+}
+
+
+.pdf-header{
+
+    height:80px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 60px;
+
+    background:white;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+}
+
+
+.pdf-header h1{
+
+    color:#1d4ed8;
+
+    font-size:28px;
+
+}
+
+
+.back-home{
+
+    color:#1d4ed8;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+}
+
+
+.pdf-container iframe{
+
+    width:100%;
+
+    height:calc(100vh - 80px);
+
+    border:none;
+
+}
+
+/*==================================
+ABOUT PAGE V2 (CORPORATE STYLE)
+==================================*/
+
+.about-page{
+
+    font-family:'Prompt',sans-serif;
+
+    background:#f5f7fb;
+
+}
+
+
+/*==========================
+HEADER
+==========================*/
+
+.about-header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:85px;
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(15px);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 70px;
+
+    z-index:999;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+
+.about-logo img{
+
+    height:55px;
+
+}
+
+
+.about-header-right{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+
+.download-btn,
+.back-home-btn{
+
+    padding:12px 24px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+.download-btn{
+
+    background:#1d4ed8;
+
+    color:white;
+
+}
+
+
+.download-btn:hover{
+
+    background:#1e40af;
+
+}
+
+
+.back-home-btn{
+
+    background:#f1f5f9;
+
+    color:#0f172a;
+
+}
+
+
+.back-home-btn:hover{
+
+    background:#e2e8f0;
+
+}
+
+
+/*==========================
+HERO
+==========================*/
+
+.about-hero{
+
+    height:380px;
+
+    background-image:url(
+'https://greenpowersolar.co.th/wp-content/uploads/2023/11/energy-research-institute-1440x900-1-1024x640-1.jpg'
+);
+
+    background-size:cover;
+
+    background-position:center;
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+
+.about-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(8,20,48,.72);
+
+}
+
+
+.about-content{
+
+    position:relative;
+
+    z-index:10;
+
+    color:white;
+
+}
+
+
+.about-badge{
+
+    display:inline-block;
+
+    padding:10px 28px;
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:50px;
+
+    margin-bottom:25px;
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
+}
+
+
+.about-content h1{
+
+    font-size:58px;
+
+    font-weight:800;
+
+    margin-bottom:20px;
+
+}
+
+
+.about-content p{
+
+    font-size:20px;
+
+    opacity:.9;
+
+}
+
+
+/*==========================
+PDF
+==========================*/
+
+.pdf-section{
+
+    max-width:1400px;
+
+    margin:-80px auto 80px;
+
+    padding:0 40px;
+
+    position:relative;
+
+    z-index:20;
+
+}
+
+
+.pdf-card{
+
+    background:white;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.15);
+
+}
+
+
+.pdf-card iframe{
+
+    width:100%;
+
+    height:1400px;
+
+    border:none;
+
+    border-radius:25px;
+
+}
+
+
+/*==========================
+RESPONSIVE
+==========================*/
+
+@media(max-width:900px){
+
+    .about-header{
+
+        padding:0 20px;
+
+    }
+
+    .about-header-right{
+
+        gap:8px;
+
+    }
+
+    .download-btn,
+    .back-home-btn{
+
+        padding:10px 14px;
+
+        font-size:14px;
+
+    }
+
+    .about-content h1{
+
+        font-size:40px;
+
+    }
+
+    .pdf-card iframe{
+
+        height:800px;
+
+    }
+
+}
+
+/* =======================
+   SERVICE CARD (กรอบสีขาว)
+======================= */
+
+.service-card{
+
+    background:#ffffff;
+
+    border-radius:30px;
+
+    padding:50px 45px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+
+    transition:0.3s;
+
+}
+
+
+.service-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(37,99,235,0.15);
+
+}
+
+
+.service-card h3{
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color:#0f172a;
+
+    margin-bottom:20px;
+
+}
+
+
+.service-card p{
+
+    color:#64748b;
+
+    line-height:1.9;
+
+    font-size:17px;
+
+}
+
+
+.service-card ul{
+
+    color:#64748b;
+
+    line-height:2;
+
+    padding-left:20px;
+
+    margin-top:10px;
+
+}
+
+
+.service-card li{
+
+    margin-bottom:8px;
+
+}
